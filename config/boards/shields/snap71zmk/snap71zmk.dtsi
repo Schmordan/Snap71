@@ -33,11 +33,11 @@
         //     ;
     };
 
-    default_transform: keymap_transform_0 {
+    matrix_transform0: keymap_transform_0 {
         // See https://zmk.dev/docs/development/hardware-integration/new-shield#matrix-transform
         // for how to configure this
         compatible = "zmk,matrix-transform";
-        columns = <8>;
+        columns = <16>;
         rows = <5>;
 
         map = <
