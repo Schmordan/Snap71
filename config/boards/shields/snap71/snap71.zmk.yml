@@ -3,7 +3,7 @@
 # for instructions.
 
 file_format: "1"
-id: snap71zmk
+id: snap71
 name: snap71
 type: shield
 
@@ -19,5 +19,5 @@ requires:
   - pro_micro
 
 siblings:
-  - snap71zmk_left
-  - snap71zmk_right
+  - snap71_left
+  - snap71_right
