@@ -1,5 +1,5 @@
-config SHIELD_SNAP71ZMK_LEFT
+config SHIELD_SNAP71_LEFT
     def_bool $(shields_list_contains,snap71_left)
 
-config SHIELD_SNAP71ZMK_RIGHT
+config SHIELD_SNAP71_RIGHT
     def_bool $(shields_list_contains,snap71_right)
