@@ -1,5 +1,10 @@
 #include "snap71.dtsi"
 
+/ {
+    chosen {
+    zephyr,display = &oled;
+    };
+};
 &default_transform {
     // Set this to the number of columns on the left side.
     col-offset = <8>;
@@ -46,7 +51,8 @@
     };
 };
 
-&pro_micro_i2c {
+// &pro_micro_i2c {
+&i2c0 {
     status = "okay";
     pinctrl-0 = <&i2c0_default>;
     pinctrl-1 = <&i2c0_sleep>;
