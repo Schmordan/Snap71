@@ -1,0 +1,12 @@
+/*
+ * Custom I2C pin configuration for nice!nano v2
+ * Using pin 7 for SCL and pin 9 for SDA
+ */
+
+&i2c0 {
+    status = "okay";
+    compatible = "nordic,nrf-twi";
+    sda-pin = <9>;
+    scl-pin = <7>;
+    clock-frequency = <100000>;
+};
