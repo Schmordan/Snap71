@@ -14,3 +14,8 @@ config ZMK_SPLIT
     default y
 
 endif # SHIELD_SNAP71_LEFT || SHIELD_SNAP71_RIGHT
+
+if SHIELD_SNAP71_RIGHT
+    config ZMK_DISPLAY
+        default y
+endif
