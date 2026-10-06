@@ -6,7 +6,7 @@
 &i2c0 {
     status = "okay";
     compatible = "nordic,nrf-twi";
-    sda-pin = <9>;
-    scl-pin = <7>;
+    sda-gpios = <&pro_micro 9 GPIO_ACTIVE_HIGH>;
+    scl-gpios = <&pro_micro 7 GPIO_ACTIVE_HIGH>;
     clock-frequency = <100000>;
 };
