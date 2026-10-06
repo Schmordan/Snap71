@@ -26,3 +26,43 @@
         , <&pro_micro 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
         ;
 };
+
+&pinctrl {
+    i2c0_default: i2c0_default {
+        group1 {
+            psels = <NRF_PSEL(TWIM_SDA, 0, 11)>,  /* Pro Micro Pin 7 / D7 -> P0.11 */
+                    <NRF_PSEL(TWIM_SCL, 1, 6)>;   /* Pro Micro Pin 9 / D9 -> P1.06 */
+        };
+    };
+
+    i2c0_sleep: i2c0_sleep {
+        group1 {
+            psels = <NRF_PSEL(TWIM_SDA, 0, 11)>,
+                    <NRF_PSEL(TWIM_SCL, 1, 6)>;
+            low-power-enable;                     /* Saves battery during low-power modes */
+        };
+    };
+};
+
+&i2c0 {
+    status = "okay";
+    pinctrl-0 = <&i2c0_default>;
+    pinctrl-1 = <&i2c0_sleep>;
+    pinctrl-names = "default", "sleep";
+
+    /* This embeds the OLED hardware parameters on the same pins */
+    oled: ssd1306@3c {
+        compatible = "solomon,ssd1306fb";
+        reg = <0x3c>;
+        width = <128>;
+        height = <32>;        /* Change to 64 if you are using a 128x64 screen */
+        segment-remap;
+        com-invdir;
+        page-offset = <0>;
+        display-offset = <0>;
+        multiplex-ratio = <31>; /* Change to 63 if you are using a 128x64 screen */
+        segment-offset = <0>;
+        com-sequential;
+        prechargep = <0x22>;
+    };
+};
