@@ -1,10 +1,5 @@
 #include "snap71.dtsi"
 
-/ {
-    chosen {
-        zephyr,display = &oled;
-    };
-}
 &default_transform {
     // Set this to the number of columns on the left side.
     col-offset = <8>;
