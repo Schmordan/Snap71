@@ -60,7 +60,7 @@
 
     /* This embeds the OLED hardware parameters on the same pins */
     oled: ssd1306@3c {
-      // compatible = "solomon,ssd1306fb";
+        compatible = "solomon,ssd1306fb";
         reg = <0x3c>;
         width = <128>;
         height = <32>;
@@ -71,7 +71,6 @@
         segment-remap;
         com-invdir;
         com-sequential;
-        inversion-on;
         prechargep = <0x22>;
     };
 };
