@@ -35,8 +35,8 @@
 &pinctrl {
     i2c0_default: i2c0_default {
         group1 {
-            psels = <NRF_PSEL(TWIM_SDA, 0, 9)>,  /* Pro Micro Pin 7 / D7 -> P1.06 */
-                    <NRF_PSEL(TWIM_SCL, 1, 11)>;   /* Pro Micro Pin 9 / D9 -> P0.11 */
+            psels = <NRF_PSEL(TWIM_SDA, 0, 9)>,  
+                    <NRF_PSEL(TWIM_SCL, 1, 11)>; 
                     bias-pull-up;  /* Add this - I2C needs pull-ups */
         };
     };
@@ -57,7 +57,7 @@
     pinctrl-0 = <&i2c0_default>;
     pinctrl-1 = <&i2c0_sleep>;
     pinctrl-names = "default", "sleep";
-
+    clock-frequency = <I2C_BITRATE_FAST>;
     /* This embeds the OLED hardware parameters on the same pins */
     oled: ssd1306@3c {
         compatible = "solomon,ssd1306fb";
